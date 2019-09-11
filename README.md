@@ -4,13 +4,12 @@ This project is an implementation of [Terraform BigQuery Datasets](https://www.t
 Layout
 
 ```
-main.tf      --> The main terraform files, this includes the module listed below
-config.tf    --> General Terraform configuration, versions, etc.
-variables.tf --> Variables needed for Terraform to execute, which also includes
-                 defaults
-outputs.tf   --> The output of the ELB's address for the Master Node
+main.tf            --> The main terraform files, this includes the module listed below
+backend.tf         --> Contains the backend configuration, which is a bucket in Google Storage
+vars.tf            --> Variable definition
+terraform.tfvars   --> Example how to set variables
 modules/
-    terraform-google-bigquery/  
+    dataset/  
         --> This module creates a set of datasets in BigQuery by using default
             access permissions, or user defined access
 ```
